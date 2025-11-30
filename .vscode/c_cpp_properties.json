@@ -1,23 +1,43 @@
 {
-  "configurations": [
-    {
-      "name": "ESP-IDF",
-      "compilerPath": "${config:idf.toolsPath}/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
-      "compileCommands": "${config:idf.buildPath}/compile_commands.json",
-      "includePath": [
-        "${config:idf.espIdfPath}/components/**",
-        "${config:idf.espIdfPathWin}/components/**",
-        "${workspaceFolder}/**"
-      ],
-      "browse": {
-        "path": [
-          "${config:idf.espIdfPath}/components",
-          "${config:idf.espIdfPathWin}/components",
-          "${workspaceFolder}"
-        ],
-        "limitSymbolsToIncludedHeaders": true
-      }
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "name": "ESP-IDF",
+            "compilerPath": "/home/dev/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
+            "compileCommands": [
+                "/home/dev/projects/robotArm/build/compile_commands.json"
+            ],
+            "includePath": [
+                "/home/dev/esp/v5.5.1/esp-idf/components/**",
+                "${env:IDF_PATH}/components/**",
+                "/home/dev/projects/robotArm/**",
+                "build/config/sdkconfig.h"
+            ],
+            "browse": {
+                "path": [
+                    "/home/dev/esp/v5.5.1/esp-idf/components",
+                    "${env:IDF_PATH}/components",
+                    "/home/dev/projects/robotArm"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerPathInCppPropertiesJson": "${config:idf.toolsPath}/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
+            "compileCommandsInCppPropertiesJson": [
+                "${config:idf.buildPath}/compile_commands.json"
+            ],
+            "mergeConfigurations": false,
+            "recursiveIncludes": {}
+        },
+        {
+            "name": "build/config/sdkconfig.h",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
 }
