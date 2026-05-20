@@ -26,10 +26,27 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 5.5.1
+    version: 5.3.2
+  micro_ros_espidf_component:
+    component_hash: 25fc9acefc5c89a471de415b5757386e72539e39d00535d7ec3429a610ecddc4
+    dependencies:
+    - name: espressif/esp_wifi_remote
+      rules:
+      - if: target in [esp32p4]
+      version: '>=0.10,<2.0'
+    - name: espressif/esp_hosted
+      rules:
+      - if: target in [esp32p4]
+      version: ~2
+    source:
+      git: https://github.com/micro-ROS/micro_ros_espidf_component.git
+      path: .
+      type: git
+    version: 160b1037b4edea59aca1f1e9f31b1d481742dabf
 direct_dependencies:
 - espressif/esp32-camera
 - idf
-manifest_hash: bb2e04f03fc22fe03978f48d3f4f74ead5a698f8aba43ac46cd3353f373a000c
+- micro_ros_espidf_component
+manifest_hash: e1b425fb628801efacd60131c9c17e9f64d83ad4703217f7d4c126dd5a281b1f
 target: esp32
 version: 2.0.0

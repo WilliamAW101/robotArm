@@ -2,41 +2,20 @@
     "configurations": [
         {
             "name": "ESP-IDF",
-            "compilerPath": "/home/dev/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
-            "compileCommands": [
-                "/home/dev/projects/robotArm/build/compile_commands.json"
-            ],
+            "compilerPath": "/home/angelo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
             "includePath": [
-                "/home/dev/esp/v5.5.1/esp-idf/components/**",
-                "${env:IDF_PATH}/components/**",
-                "/home/dev/projects/robotArm/**",
-                "build/config/sdkconfig.h"
+                "${workspaceFolder}/**",
+                "/home/angelo/.espressif/esp-idf-v5.3.2/components/**",
+                "/home/angelo/robotArm/build/config",
+                "/home/angelo/robotArm/managed_components/**"
             ],
-            "browse": {
-                "path": [
-                    "/home/dev/esp/v5.5.1/esp-idf/components",
-                    "${env:IDF_PATH}/components",
-                    "/home/dev/projects/robotArm"
-                ],
-                "limitSymbolsToIncludedHeaders": true
-            },
-            "compilerPathInCppPropertiesJson": "${config:idf.toolsPath}/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc",
-            "compileCommandsInCppPropertiesJson": [
-                "${config:idf.buildPath}/compile_commands.json"
+            "defines": [
+                "ESP_PLATFORM",
+                "IDF_VER=\"v5.3.2\""
             ],
-            "mergeConfigurations": false,
-            "recursiveIncludes": {}
-        },
-        {
-            "name": "build/config/sdkconfig.h",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm"
         }
     ],
     "version": 4
